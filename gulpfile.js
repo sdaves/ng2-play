@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var livereload = require('gulp-livereload');
 
 var PATHS = {
     src: 'src/**/*.ts'
@@ -21,7 +22,9 @@ gulp.task('ts2js', function () {
             experimentalDecorators: true
         }));
 
-    return tsResult.js.pipe(gulp.dest('dist'));
+    return tsResult.js
+      .pipe(gulp.dest('dist'))
+      .pipe(livereload());
 });
 
 gulp.task('play', ['ts2js'], function () {
@@ -32,11 +35,17 @@ gulp.task('play', ['ts2js'], function () {
 
     var port = 9000, app;
 
+    livereload.listen();
+
     gulp.watch(PATHS.src, ['ts2js']);
 
-    app = connect().use(serveStatic(__dirname));
+    app = connect();
+    app.use(require('connect-livereload')());
+    app.use(serveStatic(__dirname));
     http.createServer(app).listen(port, function () {
         open('http://localhost:' + port);
     });
 });
+
+gulp.task('default', ['play']);
 

@@ -4,7 +4,6 @@ import {ILogger} from './services/ilogger';
 import {ConsoleLogger} from './services/consolelogger';
 import {HelloApp} from './hello-app';
 import {Greeting} from './greeting';
-import {BlueGreeting} from './bluegreeting';
 
 @Component({
   selector: 'bootstrap',

@@ -49,7 +49,7 @@ System.register(['angular2/angular2', './ilogger', './consolelogger', './hello-a
             angular2_1.bootstrap(Bootstrap, [
                 hello_app_1.HelloApp,
                 greeting_1.Greeting,
-                angular2_1.provide(ilogger_1.ILogger, { useFactory: function () { return new consolelogger_1.ConsoleLogger(); } }),
+                angular2_1.provide(ilogger_1.ILogger, { useClass: consolelogger_1.ConsoleLogger }),
             ]);
         }
     }

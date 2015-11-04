@@ -22,5 +22,5 @@ export class Bootstrap {
 bootstrap(Bootstrap, [
   HelloApp,
   Greeting,
-  provide(ILogger, {useFactory: () => new ConsoleLogger()}),
+  provide(ILogger, {useClass: ConsoleLogger}),
 ]);

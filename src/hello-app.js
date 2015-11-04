@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var core_1 = require('angular2/core');
 var greeting_1 = require('./greeting');
+var ilogger_1 = require('./ilogger');
 var HelloApp = (function () {
     function HelloApp(logger) {
         this.logger = logger;
@@ -22,7 +23,7 @@ var HelloApp = (function () {
             directives: [greeting_1.Greeting],
             template: "\n        <div>Welcome to Angular 2!</div>\n        <greeting/>\n    "
         }), 
-        __metadata('design:paramtypes', [Object])
+        __metadata('design:paramtypes', [ilogger_1.ILogger])
     ], HelloApp);
     return HelloApp;
 })();

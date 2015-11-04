@@ -32,12 +32,15 @@ System.register(['angular2/angular2', 'angular2/core', './greeting', './services
                     this.logger = logger;
                     logger.info("HelloApp created");
                 }
+                HelloApp.prototype.sayHi = function () {
+                    alert("Hi");
+                };
                 HelloApp = __decorate([
                     core_1.Injectable(),
                     angular2_1.Component({
                         selector: 'hello-app',
                         directives: [greeting_1.Greeting],
-                        template: "\n        <div>Welcome to Angular 2!</div>\n        <greeting/>\n    "
+                        template: "\n        <div (click)=\"sayHi()\">Welcome to Angular 2! (click to say hi)</div>\n        <greeting/>\n    "
                     }), 
                     __metadata('design:paramtypes', [ilogger_1.ILogger])
                 ], HelloApp);

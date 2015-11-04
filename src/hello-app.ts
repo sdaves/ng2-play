@@ -8,12 +8,16 @@ import {ILogger} from './services/ilogger';
     selector: 'hello-app',
     directives: [Greeting],
     template: `
-        <div>Welcome to Angular 2!</div>
+        <div (click)="sayHi()">Welcome to Angular 2! (click to say hi)</div>
         <greeting/>
     `
 })
 export class HelloApp {
   constructor(public logger: ILogger) {
     logger.info("HelloApp created");
+  }
+
+  sayHi() {
+    alert("Hi");
   }
 }

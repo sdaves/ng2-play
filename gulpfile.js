@@ -48,4 +48,3 @@ gulp.task('play', ['ts2js'], function () {
 });
 
 gulp.task('default', ['play']);
-

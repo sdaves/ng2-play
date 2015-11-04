@@ -1,6 +1,6 @@
 import {Component} from 'angular2/angular2';
 import {Injectable} from 'angular2/core';
-import {ILogger} from './ilogger';
+import {ILogger} from './services/ilogger';
 
 @Injectable()
 @Component({

@@ -1,7 +1,7 @@
 import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 import {Injectable} from 'angular2/core';
 import {Greeting} from './greeting';
-import {ILogger} from './ilogger';
+import {ILogger} from './services/ilogger';
 
 @Injectable()
 @Component({

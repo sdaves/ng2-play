@@ -20,11 +20,11 @@
         "!node_modules/**"
     ],
     "files": [
+        "src/bluegreeting.ts",
         "src/bootstrap.ts",
-        "src/consolelogger.ts",
         "src/greeting.ts",
         "src/hello-app.ts",
-        "src/ilogger.ts",
-        "src/logger.ts"
+        "src/services/consolelogger.ts",
+        "src/services/ilogger.ts"
     ]
 }

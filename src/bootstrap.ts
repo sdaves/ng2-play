@@ -1,10 +1,10 @@
-import {CORE_DIRECTIVES, bootstrap, provide, Injector, bind, Component, DynamicComponentLoader} from 'angular2/angular2';
+import {CORE_DIRECTIVES, bootstrap, provide, Component} from 'angular2/angular2';
 import {Injectable} from 'angular2/core';
-import {Logger} from './logger';
-import {ILogger} from './ilogger';
-import {ConsoleLogger} from './consolelogger';
+import {ILogger} from './services/ilogger';
+import {ConsoleLogger} from './services/consolelogger';
 import {HelloApp} from './hello-app';
 import {Greeting} from './greeting';
+import {BlueGreeting} from './bluegreeting';
 
 @Component({
   selector: 'bootstrap',

@@ -1,4 +1,4 @@
-System.register(['angular2/angular2', './ilogger', './consolelogger', './hello-app', './greeting'], function(exports_1) {
+System.register(['angular2/angular2', './services/ilogger', './services/consolelogger', './hello-app', './greeting'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
         switch (arguments.length) {

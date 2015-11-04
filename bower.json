@@ -14,6 +14,8 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.2.0"
+    "polymer": "Polymer/polymer#^1.2.0",
+    "es6-shim": "~0.33.10",
+    "system.js": "~0.19.5"
   }
 }

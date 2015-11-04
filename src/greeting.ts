@@ -1,11 +1,10 @@
 import {Component} from 'angular2/angular2';
 import {Injectable} from 'angular2/core';
-import {Logger} from './logger';
+import {ILogger} from './ilogger';
 
 @Injectable()
 @Component({
     selector: 'greeting',
-    providers: [Logger],
     template: `
         <h1>Hello, {{name}}!</h1>
         Say hello to: <input [value]="name" (input)="name = $event.target.value">
@@ -14,7 +13,7 @@ import {Logger} from './logger';
 export class Greeting {
     name: string = 'World';
 
-    constructor(private logger:Logger) {
+    constructor(private logger:ILogger) {
       logger.info("Greeting created");
     }
 }

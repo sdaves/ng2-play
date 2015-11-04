@@ -1,20 +1,19 @@
 import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 import {Injectable} from 'angular2/core';
 import {Greeting} from './greeting';
-import {Logger} from './logger';
+import {ILogger} from './ilogger';
 
 @Injectable()
 @Component({
     selector: 'hello-app',
-    providers: [Logger],
     directives: [Greeting],
     template: `
-        <div>Welcome!</div>
+        <div>Welcome to Angular 2!</div>
         <greeting/>
     `
 })
 export class HelloApp {
-  constructor(private logger: Logger) {
+  constructor(public logger: ILogger) {
     logger.info("HelloApp created");
   }
 }

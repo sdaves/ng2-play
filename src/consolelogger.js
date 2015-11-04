@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var ConsoleLogger = (function () {
     function ConsoleLogger() {
-        console.log("consolelogger created");
+        this.info("consolelogger created");
     }
     ConsoleLogger.prototype.info = function (value) {
         console.info("consolelogger:" + value);

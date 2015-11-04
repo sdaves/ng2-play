@@ -1,3 +1,3 @@
-export interface ILogger {
-  info(value: string): void;
+export abstract class ILogger {
+  abstract info(value: string): void;
 }

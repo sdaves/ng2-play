@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var core_1 = require('angular2/core');
 var greeting_1 = require('./greeting');
-var logger_1 = require('./logger');
 var HelloApp = (function () {
     function HelloApp(logger) {
         this.logger = logger;
@@ -20,11 +19,10 @@ var HelloApp = (function () {
         core_1.Injectable(),
         angular2_1.Component({
             selector: 'hello-app',
-            providers: [logger_1.Logger],
             directives: [greeting_1.Greeting],
-            template: "\n        <div>Welcome!</div>\n        <greeting/>\n    "
+            template: "\n        <div>Welcome to Angular 2!</div>\n        <greeting/>\n    "
         }), 
-        __metadata('design:paramtypes', [logger_1.Logger])
+        __metadata('design:paramtypes', [Object])
     ], HelloApp);
     return HelloApp;
 })();

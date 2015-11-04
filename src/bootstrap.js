@@ -8,30 +8,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var logger_1 = require('./logger');
+var ilogger_1 = require('./ilogger');
 var consolelogger_1 = require('./consolelogger');
 var hello_app_1 = require('./hello-app');
 var greeting_1 = require('./greeting');
-var customInjector = angular2_1.Injector.resolveAndCreate([
-    hello_app_1.HelloApp,
-    greeting_1.Greeting,
-    angular2_1.provide(logger_1.Logger, { useClass: consolelogger_1.ConsoleLogger }),
-]);
 var Bootstrap = (function () {
-    function Bootstrap() {
-        this.items = [];
-        var instance = customInjector.get(hello_app_1.HelloApp);
-        this.items.push(instance);
+    function Bootstrap(logger) {
+        this.logger = logger;
+        logger.info("Hello from Bootstrap");
     }
     Bootstrap = __decorate([
         angular2_1.Component({
             selector: 'bootstrap',
             directives: [angular2_1.CORE_DIRECTIVES, hello_app_1.HelloApp],
-            template: "\n    <hello-app *ng-for=\"#item of items\"/>\n  "
+            template: "\n    <hello-app/>\n  "
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [ilogger_1.ILogger])
     ], Bootstrap);
     return Bootstrap;
 })();
 exports.Bootstrap = Bootstrap;
-angular2_1.bootstrap(Bootstrap);
+angular2_1.bootstrap(Bootstrap, [
+    hello_app_1.HelloApp,
+    greeting_1.Greeting,
+    angular2_1.provide(ilogger_1.ILogger, { useFactory: function () { return new consolelogger_1.ConsoleLogger(); } }),
+]);

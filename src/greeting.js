@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var core_1 = require('angular2/core');
-var logger_1 = require('./logger');
+var ilogger_1 = require('./ilogger');
 var Greeting = (function () {
     function Greeting(logger) {
         this.logger = logger;
@@ -20,10 +20,9 @@ var Greeting = (function () {
         core_1.Injectable(),
         angular2_1.Component({
             selector: 'greeting',
-            providers: [logger_1.Logger],
             template: "\n        <h1>Hello, {{name}}!</h1>\n        Say hello to: <input [value]=\"name\" (input)=\"name = $event.target.value\">\n    "
         }), 
-        __metadata('design:paramtypes', [logger_1.Logger])
+        __metadata('design:paramtypes', [ilogger_1.ILogger])
     ], Greeting);
     return Greeting;
 })();
